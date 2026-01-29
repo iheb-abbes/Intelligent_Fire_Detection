@@ -33,7 +33,7 @@ class ControlPanel:
 def main():
     PI_IP = "127.0.0.1" 
     # YouTube source for testing fire and smoke
-    VIDEO_SOURCE = "https://www.youtube.com/watch?v=whlymAuRtzU" 
+    VIDEO_SOURCE = "https://www.youtube.com/watch?v=Rl2_axBNkrw" 
     
     # Initialize Modules
     detector = FireDetector(model_path='pc_system/models/fire.pt') 

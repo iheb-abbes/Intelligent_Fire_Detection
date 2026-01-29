@@ -23,8 +23,7 @@ class FireDetector:
         self.is_confirmed = False
 
     def detect(self, frame):
-        # 1. Higher confidence (0.50) to filter out weak 'wall' detections
-        results = self.model(frame, verbose=False, conf=0.50) 
+        results = self.model(frame, verbose=False, conf=0.25) 
         
         detections = []
         hazard_found = False
@@ -50,7 +49,7 @@ class FireDetector:
                 if label.lower() in ['fire', 'smoke', 'flame']: 
                     
                     # 2. Size Filter: If 'smoke' covers > 70% of screen, ignore it (likely a wall)
-                    if label.lower() == 'smoke' and area_ratio > 0.70:
+                    if label.lower() == 'smoke' and area_ratio > 0.90:
                         continue 
 
                     hazard_found = True
